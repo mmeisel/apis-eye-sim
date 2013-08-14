@@ -8,7 +8,7 @@ var apisEyeSim = function (target) {
     var _fadeDuration = 250;
     var _iteration = 0;
     var _frameTimer = null;
-    var _renderer = self.emptyMatrix;
+    var _renderer;
     
     self.renderer = function (r) {
         if (!arguments.length) return _renderer;
@@ -101,5 +101,7 @@ var apisEyeSim = function (target) {
         return self;
     };
     
+    // Default renderer
+    _renderer = self.emptyMatrix;
     return self;
 };
