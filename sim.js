@@ -72,7 +72,7 @@ var apisEyeSim = function (target) {
     };
     
     self.start = function () {
-        var rows = d3.select(_element).selectAll('g').data(self.renderer);
+        var rows = _element.selectAll('g').data(self.renderer);
     
         rows.enter().append('g');
     
