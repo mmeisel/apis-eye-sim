@@ -6,6 +6,7 @@ var apisEyeSim = function (target) {
     var _element = typeof target == 'string' ? d3.select(target) : target;
     var _frameDuration = 500;
     var _fadeDuration = 250;
+    var _iteration = 0;
     var _frameTimer = null;
     var _renderer = self.emptyMatrix;
     
@@ -21,6 +22,10 @@ var apisEyeSim = function (target) {
     
     self.cols = function () {
         return 9;
+    };
+    
+    self.iteration = function () {
+        return _iteration;
     };
     
     self.isInBounds = function (x, y) {
@@ -86,11 +91,13 @@ var apisEyeSim = function (target) {
         if (!_frameTimer) {
             _frameTimer = setInterval(self.start, _frameDuration);
         }
+        _iteration += 1;
         return self;
     };
     
     self.stop = function () {
         _frameTimer = clearInterval(_frameTimer);
+        _iteration = 0;
         return self;
     };
     
