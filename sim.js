@@ -28,20 +28,20 @@ var apisEyeSim = function (target) {
         return _iteration;
     };
     
-    self.isInBounds = function (x, y) {
-        var yMin = 0;
-        var yMax = 12;
+    self.isInBounds = function (row, col) {
+        var rowMin = 0;
+        var rowMax = 12;
     
-        if (x === 0 || x === 8) {
-            yMin = 3;
-            yMax = 9;
+        if (col === 0 || col === 8) {
+            rowMin = 3;
+            rowMax = 9;
         }
-        else if (x === 1 || x === 7) {
-            yMin = 1;
-            yMax = 11;
+        else if (col === 1 || col === 7) {
+            rowMin = 1;
+            rowMax = 11;
         }
     
-        return y >= yMin && y <= yMax && x >= 0 && x <= 8;
+        return row >= rowMin && row <= rowMax && col >= 0 && col <= 8;
     };
     
     self.emptyMatrix = function () {
