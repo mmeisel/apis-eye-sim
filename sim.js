@@ -72,7 +72,7 @@ var apisEyeSim = function (target) {
     };
     
     self.start = function () {
-        var rows = _element.selectAll('g').data(self.renderer);
+        var rows = _element.selectAll('g').data(_renderer);
     
         rows.enter().append('g');
     
