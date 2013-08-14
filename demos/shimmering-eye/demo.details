@@ -4,5 +4,5 @@ description: Apis Eye Simulator Demo
 authors:
   - Michael Meisel
 resources:
-  - ../sim.js
+  - ../../sim.js
 ...
