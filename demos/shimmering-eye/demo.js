@@ -1,4 +1,6 @@
 window.onload = function () {
+    var sim = apisEyeSim('#eye').frameDuration(500).fadeDuration(250);
+    
     var beeEye = function () {
         var matrix = sim.emptyMatrix();
         var n;
@@ -42,9 +44,5 @@ window.onload = function () {
         return matrix;
     };
 
-    var sim = apisEyeSim('#eye')
-        .frameDuration(500)
-        .fadeDuration(250)
-        .renderer(beeEye)
-        .start();
+    sim.renderer(beeEye).start();
 };
